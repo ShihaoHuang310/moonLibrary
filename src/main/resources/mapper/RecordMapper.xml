@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moon.library.mapper.RecordMapper">
+    <!--   获取所有借阅信息-->
+    <select id="getAllRecord" resultType="Record">
+        select * from lend_list
+    </select>
+
+    <!--    根据id获取自己的借阅信息-->
+    <select id="getOwnRecord" resultType="Record">
+        select * from lend_list where reader_id = #{readerId}
+    </select>
+</mapper>
